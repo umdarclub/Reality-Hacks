@@ -93,16 +93,17 @@
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         ctx.lineWidth = .5;
-        ctx.strokeStyle = $("#awd-site-wrap").css('color');
+        //ctx.strokeStyle = $("#awd-site-wrap").css('color');
+        ctx.strokeStyle = "white";
 
         for (var i = 0; i < curves_array.length; i++) {
 
             ctx.beginPath();
-            ctx.moveTo(-100, canvas.height + 100);
+            ctx.moveTo(0, canvas.height - 1000);
             ctx.bezierCurveTo(
-                curves_array[i].abc1x, curves_array[i].abc1y,
-                curves_array[i].abc2x, curves_array[i].abc2y,
-                canvas.width + 100, curves_array[i].y - 100
+                curves_array[i].abc1x-1000, curves_array[i].abc1y+950,
+                curves_array[i].abc2x+1000, curves_array[i].abc2y,
+                canvas.width+2000, curves_array[i].y - 10
             );
             ctx.stroke();
 
@@ -231,9 +232,9 @@
 
         $('#clock').countdown(awd_countdown_date).on('update.countdown', function (event) {
             var $this = $(this).html(event.strftime(''
-                + '<div class="counter-container"><div class="counter-date"><div class="counter-box first"><span>day%!d</span><div class="number">%-D</div></div></div>'
-                + '<div class="counter-time"><div class="counter-box"><div class="number">%H:%M</div></div>'
-                + '<div class="counter-box last"><div class="number">%S</div><span>seconds</span></div></div></div>'
+                + '<div class="counter-container"><div class="counter-date"><div class="counter-box first"><span><font color="white">day%!d</font></span><div class="number"><font color="white">%-D</font></div></div></div>'
+                + '<div class="counter-time"><div class="counter-box"><div class="number"><font color="white">%H:%M</font></div></div>'
+                + '<div class="counter-box last"><div class="number"><font color="white">%S</font></div><span><font color="white">seconds</font></span></div></div></div>'
             ));
         });
     }

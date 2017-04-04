@@ -22,7 +22,7 @@ var awd_bg_number_of_curves = 64;
 ///** COUNTDOWN **/
 
 var awd_countdown = true;
-var awd_countdown_date = '2017/04/14 8:00:00'; // 2015-12-10
+var awd_countdown_date = '2017/04/14 20:00:00'; // 2015-12-10
 
 ///** BORDER **/
 

@@ -1,0 +1,3 @@
+- Need sections on page for LIVE FEED, ABOUT, and SPONSORS.
+- Would be nice to have buttons that transition there as well.
+- Fix navbar so that it starts visible

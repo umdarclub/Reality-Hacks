@@ -169,62 +169,62 @@
 
     ///** CONTENT SLIDER **/
 
-    function awdContentSlider() {
-        $('.slide-item').first().addClass('active');
-
-        var bg = $('#bg');
-        var menu = $('#awd-site-nav');
-        var menu_link = menu.find('a');
-
-        menu_link.on('click', function (e) {
-            e.preventDefault();
-            
-            var active_slide = $(this).data('slide');
-            var active_bg = bg.find('.bg-' + active_slide);
-
-            bg.find('.awd-site-bg').removeClass('active');
-            $('#awd-site-wrap').removeClass('bg-' + menu.find('a.active').data('slide')).addClass("bg-" + active_slide);
-            active_bg.css({
-                "left": $(this).offset().left + ($(this).outerWidth() / 2) - 50,
-                "top": $(this).offset().top + ($(this).outerHeight() / 2) - 50
-            });
-            active_bg.addClass('active');
-
-            if ($(window).width() < 769) {
-                menu.removeClass('active');
-                $(".menu-toggle").removeClass('opened');
-            }
-
-            if (!$(this).hasClass('active')) {
-
-                menu_link.removeClass('active');
-                $(this).addClass('active');
-
-                var active_slide_content = $('.slide-item[data-slide-id=' + active_slide + ']');
-                if (active_slide_content) {
-                    $('.slide-item').removeClass('active');
-                    active_slide_content.addClass('active');
-
-                    if (active_slide_content.hasClass('active')) {
-                        awdAnimate('active');
-                    }
-
-                }
-            }
-
-        });
-
-        //* go to current slide */
-
-        $('a.go-slide').on('click', function (e) {
-            e.preventDefault();
-            var active_slide = $(this).data('slide');
-
-            menu.find('a[data-slide=' + active_slide + ']').trigger("click");
-
-        });
-
-    }
+    // function awdContentSlider() {
+    //     $('.slide-item').first().addClass('active');
+    //
+    //     var bg = $('#bg');
+    //     var menu = $('#awd-site-nav');
+    //     var menu_link = menu.find('a');
+    //
+    //     menu_link.on('click', function (e) {
+    //         e.preventDefault();
+    //
+    //         var active_slide = $(this).data('slide');
+    //         var active_bg = bg.find('.bg-' + active_slide);
+    //
+    //         bg.find('.awd-site-bg').removeClass('active');
+    //         $('#awd-site-wrap').removeClass('bg-' + menu.find('a.active').data('slide')).addClass("bg-" + active_slide);
+    //         active_bg.css({
+    //             "left": $(this).offset().left + ($(this).outerWidth() / 2) - 50,
+    //             "top": $(this).offset().top + ($(this).outerHeight() / 2) - 50
+    //         });
+    //         active_bg.addClass('active');
+    //
+    //         if ($(window).width() < 769) {
+    //             menu.removeClass('active');
+    //             $(".menu-toggle").removeClass('opened');
+    //         }
+    //
+    //         if (!$(this).hasClass('active')) {
+    //
+    //             menu_link.removeClass('active');
+    //             $(this).addClass('active');
+    //
+    //             var active_slide_content = $('.slide-item[data-slide-id=' + active_slide + ']');
+    //             if (active_slide_content) {
+    //                 $('.slide-item').removeClass('active');
+    //                 active_slide_content.addClass('active');
+    //
+    //                 if (active_slide_content.hasClass('active')) {
+    //                     awdAnimate('active');
+    //                 }
+    //
+    //             }
+    //         }
+    //
+    //     });
+    //
+    //     //* go to current slide */
+    //
+    //     $('a.go-slide').on('click', function (e) {
+    //         e.preventDefault();
+    //         var active_slide = $(this).data('slide');
+    //
+    //         menu.find('a[data-slide=' + active_slide + ']').trigger("click");
+    //
+    //     });
+    //
+    // }
 
     ///** COUNTDOWN **/
 
@@ -396,13 +396,13 @@
 
     ///** CUSTOM SCROLL **/
 
-    function awdScrollbar() {
-
-        $('.sections-block').perfectScrollbar({
-            suppressScrollX: true
-        });
-
-    }
+    // function awdScrollbar() {
+    //
+    //     $('.sections-block').perfectScrollbar({
+    //         suppressScrollX: true
+    //     });
+    //
+    // }
 
 
     ///** DOCUMENT READY **/
@@ -414,7 +414,7 @@
         }
 
         awdMenu();
-        awdContentSlider();
+        // awdContentSlider();
 
         if (awd_countdown === true) {
             awdCountdown();
@@ -426,7 +426,7 @@
         }
         awdSubscribe();
         awdContactForm();
-        awdScrollbar();
+        // awdScrollbar();
 
         if (awd_bg_animated === true) {
             awdCanvas();
